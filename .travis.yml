@@ -1,0 +1,12 @@
+language: php 
+
+php:
+  - 7.0
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+before_script:
+  - "ci-scripts/setup.sh"
