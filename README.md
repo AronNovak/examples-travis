@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AronNovak/examples-travis.svg?branch=master)](https://travis-ci.org/AronNovak/examples-travis)
+
 Examples for Developers
 =======================
 
