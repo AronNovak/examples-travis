@@ -18,7 +18,7 @@ export PHP_OPTIONS
 drush --yes core-quick-drupal --core=drupal-8.3.x --profile=standard --no-server --db-url=mysql://root:@127.0.0.1/drupal testing
 
 # Activates the examples module.
-DRUPAL_ROOT=testing/drupal-7.x
+DRUPAL_ROOT=testing/drupal-8.3.x
 export DRUPAL_ROOT
 ln -s $(pwd) $DRUPAL_ROOT/modules/examples
 cd $DRUPAL_ROOT || exit 1
