@@ -13,4 +13,4 @@ mysql -e "SHOW VARIABLES LIKE 'wait_timeout';"
 mysql -e 'CREATE DATABASE drupal'
 
 # Vanilla Drupal 8 core.
-drush --yes core-quick-drupal --core=drupal-8.x --profile=normal --no-server --db-url=mysql://root:@127.0.0.1/drupal
+drush --yes core-quick-drupal --core=drupal-8.3.x --profile=standard --no-server --db-url=mysql://root:@127.0.0.1/drupal testing
