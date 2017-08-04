@@ -9,4 +9,9 @@ mysql:
   encoding: utf8
 
 before_script:
-  - "ci-scripts/setup.sh"
+  - "ci-scripts/setup_drupal.sh"
+  - "ci-scripts/setup_zalenium.sh"
+  - "ci-scripts/setup_webdriverio.sh"
+
+script:
+  - "ci-scripts/run_webdriverio.sh"
