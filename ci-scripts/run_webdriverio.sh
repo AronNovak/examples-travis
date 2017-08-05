@@ -3,7 +3,7 @@ set -e
 
 echo "Test WebDriverIO."
 
-cd wdio || exit
+cd tests/wdio || exit
 
 WDIO_ALL_RET=0
 set +o errexit
