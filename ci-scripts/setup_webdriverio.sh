@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Installs the needed NPM packages.
-cd wdio || exit
+cd tests/wdio || exit
 npm install
