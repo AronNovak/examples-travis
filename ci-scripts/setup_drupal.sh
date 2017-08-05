@@ -1,7 +1,7 @@
 #!/bin/bash
 
 composer global require drush/drush
-export PATH=$PATH:~/.composer/vendor/bin
+export PATH=$PATH:~/.config/composer/vendor/bin
 
 # MySQL gone away error mitigation.
 mysql -e "SET GLOBAL wait_timeout = 36000;"
