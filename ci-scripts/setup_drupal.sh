@@ -15,12 +15,14 @@ mysql -e 'CREATE DATABASE drupal'
 # Vanilla Drupal 8 core.
 PHP_OPTIONS="-d sendmail_path=$(which true)"
 export PHP_OPTIONS
+# Navigate out of module directory to avoid recursive module looku problem.
+cd ../..
 drush --yes core-quick-drupal --core=drupal-8.3.x --profile=standard --no-server --db-url=mysql://root:@127.0.0.1/drupal testing
 
 # Activates the examples module.
 DRUPAL_ROOT=testing/drupal-8.3.x
 export DRUPAL_ROOT
-ln -s $(pwd) $DRUPAL_ROOT/modules/examples
+ln -s $(readlink -e $(cd -)) $DRUPAL_ROOT/modules/examples
 cd $DRUPAL_ROOT || exit 1
 drush --yes pm-enable examples fapi_example
 
