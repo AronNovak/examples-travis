@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ability to connect to the host via a fixed IP.
+docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 dockernet
+
 # Dependency image.
 docker pull elgalu/selenium
 

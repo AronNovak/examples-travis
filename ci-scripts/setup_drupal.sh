@@ -27,5 +27,5 @@ cd $DRUPAL_ROOT || exit 1
 drush --yes pm-enable examples fapi_example
 
 # Create the webserver for WDIO test
-drush runserver 127.0.0.1:8080 &
+drush runserver 0.0.0.0:8080 &
 until (curl --output /dev/null --silent --head --fail http://localhost:8080); do sleep 1; done
