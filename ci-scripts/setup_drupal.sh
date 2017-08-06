@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Installs Drush globally.
 composer global require drush/drush
 export PATH=$PATH:~/.config/composer/vendor/bin
 
@@ -15,6 +16,7 @@ mysql -e 'CREATE DATABASE drupal'
 # Vanilla Drupal 8 core.
 PHP_OPTIONS="-d sendmail_path=$(which true)"
 export PHP_OPTIONS
+
 # Navigate out of module directory to avoid recursive module looku problem.
 cd ../..
 drush --yes core-quick-drupal --core=drupal-8.3.x --profile=standard --no-server --db-url=mysql://root:@127.0.0.1/drupal testing
@@ -26,6 +28,6 @@ ln -s $(readlink -e $(cd -)) $DRUPAL_ROOT/modules/examples
 cd $DRUPAL_ROOT || exit 1
 drush --yes pm-enable examples fapi_example
 
-# Create the webserver for WDIO test
+# Creates the webserver for WDIO test.
 drush runserver 0.0.0.0:8080 &
 until (curl --output /dev/null --silent --head --fail http://localhost:8080); do sleep 1; done
