@@ -6,11 +6,11 @@ describe('Form API Examples / AJAX form', function() {
         const temperatureSelectSelector = '#edit-temperature';
         const colorSelectSelector = 'select[name=color]';
 
-        // Initiall, only one Select is visible.
+        // Initially, only one Select is visible.
         browser.waitForVisible(temperatureSelectSelector);
         browser.waitForVisible(colorSelectSelector, 200, true);
 
-        // Selecting the first Select list.
+        // Selects the first Select list.
         browser.selectByValue(temperatureSelectSelector, 'warm')
 
         // Loads the second Select list by AJAX.
